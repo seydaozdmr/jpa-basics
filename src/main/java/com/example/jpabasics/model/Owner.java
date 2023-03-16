@@ -1,5 +1,6 @@
 package com.example.jpabasics.model;
 
+import com.example.jpabasics.converter.RatingConverter;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,7 +14,7 @@ public class Owner  extends BaseEntity{
     private String lastName;
 
     @Column(name = "t_rating")
-    @Enumerated(EnumType.ORDINAL)
+    @Convert(converter = RatingConverter.class) //hibernate'e özel
     private Rating rating;
 
     @Embedded
