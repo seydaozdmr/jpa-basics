@@ -1,10 +1,14 @@
 package com.example.jpabasics.model;
 
+import com.example.jpabasics.converter.CityCodeUserType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+//import org.hibernate.annotations.Type;
+//import org.hibernate.annotations.TypeDef;
 
+//@TypeDef(name = "cityCode",typeClass = CityCodeUserType.class)
 @Embeddable
 public class Address {
 
@@ -17,6 +21,9 @@ public class Address {
 
     @Column( name = "t_phone")
     private String phone;
+
+    //@Type(value = CityCodeUserType.class)
+    private CityCode cityCode;
 
     public PhoneType getPhoneType() {
         return phoneType;
@@ -40,5 +47,13 @@ public class Address {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public CityCode getCityCode() {
+        return cityCode;
+    }
+
+    public void setCityCode(CityCode cityCode) {
+        this.cityCode = cityCode;
     }
 }

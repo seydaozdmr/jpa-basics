@@ -30,6 +30,7 @@ public class LoadData implements CommandLineRunner {
         owner.setName("Seyda");
         owner.setLastName("Özdemir");
         Address address=new Address();
+        address.setCityCode(CityCode.ANTALYA);
         address.setPhone("555");
         address.setStreet("bucak");
         address.setPhoneType(PhoneType.WORK);
