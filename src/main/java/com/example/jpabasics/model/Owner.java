@@ -3,6 +3,9 @@ package com.example.jpabasics.model;
 import com.example.jpabasics.converter.RatingConverter;
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "t_owner")
 public class Owner  extends BaseEntity{
@@ -19,6 +22,11 @@ public class Owner  extends BaseEntity{
 
     @Embedded
     private Address address;
+
+    @OneToMany(mappedBy = "owner",fetch = FetchType.LAZY,cascade = CascadeType.ALL,orphanRemoval = true)
+    //@JoinColumn(name = "owner_id")
+    private Set<Pet> pets = new HashSet<>();
+
 
     public String getName() {
         return name;
@@ -50,5 +58,13 @@ public class Owner  extends BaseEntity{
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public Set<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(Set<Pet> pets) {
+        this.pets = pets;
     }
 }
