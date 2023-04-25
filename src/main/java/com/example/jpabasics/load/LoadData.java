@@ -30,6 +30,7 @@ public class LoadData implements CommandLineRunner {
         PetType petType = new PetType();
         petType.setName("Köpek");
         petTypeRepository.save(petType);
+
         Pet p1=new Pet();
         p1.setName("çomar");
         p1.setBirtdate(LocalDateTime.now());

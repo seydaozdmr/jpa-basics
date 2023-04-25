@@ -20,7 +20,7 @@ public class Address {
     private String phone;
 
     @ManyToOne
-    @JoinColumn(name = "city_id",foreignKey = @ForeignKey(name="fk_adress_city"))
+    @JoinColumn(name = "city_id",foreignKey = @ForeignKey(name="fk_adress_city")) //foreignKey adı özelleştiriliyor
     private City city;
 
     //@Type(value = CityCodeUserType.class)
