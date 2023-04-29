@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@DiscriminatorValue("VET")
 @Entity
 @Table(name = "t_vet")
 public class Vet extends Person {

@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@DiscriminatorValue("OWNER")
 @Entity
 @Table(name = "t_owner")
 public class Owner  extends Person{
