@@ -46,7 +46,7 @@ public class LoadData implements CommandLineRunner {
 
 
         Owner owner=new Owner();
-        owner.setName("Seyda");
+        owner.setFirstName("Seyda");
         owner.setLastName("Özdemir");
         Address address=new Address();
         address.setCity(burdur);

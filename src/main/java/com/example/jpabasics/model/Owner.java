@@ -8,13 +8,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "t_owner")
-public class Owner  extends BaseEntity{
+public class Owner  extends Person{
 
-    @Column(name = "t_name")
-    private String name;
-
-    @Column(name="t_last_name")
-    private String lastName;
 
     @Column(name = "t_rating")
     @Convert(converter = RatingConverter.class) //hibernate'e özel
@@ -39,24 +34,6 @@ public class Owner  extends BaseEntity{
     //@JoinColumn(name = "owner_id") //tek yönlü foreignKey üzerinden OneToMany ilişkisi (pet tablosunda bu alan yaratılır:owner_id
     private Set<Pet> pets = new HashSet<>();
 
-
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     public Rating getRating() {
         return rating;

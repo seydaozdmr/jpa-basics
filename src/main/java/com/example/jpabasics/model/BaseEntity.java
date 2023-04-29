@@ -9,7 +9,7 @@ import jakarta.persistence.MappedSuperclass;
 public abstract class BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE) //table_per_class Intentity desteklemez
     private Long id;
 
     public Long getId() {
